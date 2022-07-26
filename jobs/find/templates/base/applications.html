@@ -1,0 +1,31 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Bio</td>
+    </tr>
+{% for i in ace %}
+
+    <tr>
+        <td>{{i.Full_name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.bio}}</td>
+    </tr>
+
+
+{% endfor %}
+</table>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

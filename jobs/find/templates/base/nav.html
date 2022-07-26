@@ -1,0 +1,22 @@
+<ul>
+    <li style=" float:left;"><a href="{% url 'jobs'%}">Spectrum.io</a></li>
+    <li><a href="{% url 'individual' %}">freelance</a></li>
+    {% if request.user.is_authenticated %}
+    <li style="float:right;"><a href="{% url 'logout' %}">Logout</a> {% else %}</li>
+   <li> <a href="{% url 'register' %}">SignUp</a></li>
+   <li> <a href="{% url 'login' %}">Login</a>
+    
+    
+    {% endif %}
+    {% if request.user.is_authenticated %}
+    <li><a href="{% url 'individual-form' %}">add a job</a></li>
+    <li><a href="{% url 'methods' %}">Payment</a></li>
+    {% endif %}
+    {% if request.user.is_superuser %}
+    <li><a href="{% url 'add-company' %}">add company</a></li>
+    <li><a href="{% url 'list' %}">applications</a></li>
+    <li><a href="{% url 'payments' %}">payments</a></li>
+
+    {% endif %}
+    
+</ul>

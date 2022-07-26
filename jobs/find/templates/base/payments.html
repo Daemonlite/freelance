@@ -1,0 +1,22 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Card Number</td>
+        <td>Card Type</td>
+        <td>CVC</td>
+    </tr>
+{% for i in pay %}
+
+    <tr>
+        <td>{{i.Name_On_Card}}</td>
+        <td>{{i.Card_Number}}</td>
+        <td>{{i.card_type}}</td>
+        <td>{{i.CVC}}</td>
+    </tr>
+
+
+{% endfor %}
+</table>
+{% endblock content %}

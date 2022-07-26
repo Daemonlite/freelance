@@ -1,0 +1,44 @@
+{% extends "base/main.html" %}
+{% load socialaccount %}
+{% load static %}
+{% load i18n %}
+{% providers_media_js %}
+{% block content %}
+
+<div class="header-bar">
+  <h1>Login</h1>
+</div>
+
+<div class="card-body">
+  <form method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Submit">
+  </form>
+
+</div>
+<a class="button secondaryAction"  href="{% url 'password_reset' %}"> Forgot Password?</a>
+
+</form>
+<h2>Or Sign in with</h2>
+<hr>
+  <div class="img">
+    <button><a href="{% provider_login_url "google" %}"><img src="{% static 'site/images/gol.png' %}"height="70" width="100"><br>
+      Google</a></button><br>
+    <button><a href="{% provider_login_url "github" %}"><img src="{% static 'site/images/git.png' %}"height="70" width="100"> <br> Github</a></button>
+    </div>
+    </div>
+
+    <script>
+
+
+    
+    
+    </script>
+
+
+
+
+
+
+{% endblock %}

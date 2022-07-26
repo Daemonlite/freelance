@@ -1,0 +1,35 @@
+{% extends 'base/main.html' %}
+{% block content %}
+{% load static %}
+<body>
+  {% if request.user.is_authenticated %}    
+    <h2>Hello {{user}}</h2>
+    {% endif %}
+    <h1>Companies Hiring</h1>
+    <div class="div">
+        {% for i in obj %}
+    </div>
+    <section class="center">
+    <div class="name">
+    <img src="{% static 'site/images/profile.png' %}"height="50" length="50">
+       {{i.Name}}
+
+      <small class="about">{{i.about}}</small>
+    </div>
+    </section>
+    <div class="abt">
+     
+    </div>
+    {% endfor %}
+   
+
+     
+        
+        
+    
+
+</body>
+{% endblock content %}
+
+
+

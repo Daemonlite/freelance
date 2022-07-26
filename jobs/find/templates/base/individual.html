@@ -1,0 +1,30 @@
+{% extends 'base/main.html' %}
+{% block content %}
+{% load static %}
+
+
+    <div class="headerbar">
+        <h2><a href="{% url 'jobs' %}">&larr; back to home</a></h2>
+    </div>
+    
+     <h1>Available freelance jobs</h1>
+     
+    <div class="individal">
+        {% for x in ind %}
+       
+    </div>
+    <section class="center">
+    <div class="name">
+        <div class="profile">
+            <img src="{% static 'site/images/paint.jpg' %}"height="50" length="50">
+        </div>
+        {{x.job_descr}}
+        <small class="about">${{x.amount_due}}</small>
+    </div>
+</section>
+
+
+{% endfor %}
+
+</body>
+{% endblock content %}

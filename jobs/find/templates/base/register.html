@@ -1,0 +1,39 @@
+{% extends 'base/main.html' %}
+{% block content %}
+{% load socialaccount %}
+{% providers_media_js %}
+        
+
+<!--Register--> 
+
+
+	<div class="header-bar">
+	<h1>Register</h1>
+</div>
+	<form method="POST">
+		{% csrf_token %}
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+		<br>
+		<br>
+         <p>please enter a valid email  </p>
+		<label>{{form.email.label}}</label>
+        {{form.email}}
+         
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+		<br>
+		<br>
+        <p>password must contain uppercase, symbols and numbers</p>
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+          <br>   
+		  <br>                
+		<button><input type="submit" value="Submit"></button>
+	</form>
+	<p >If you already have an account, <a href="{% url 'login' %}">login instead.</a></p>
+</div>
+
+
+
+{% endblock %}
